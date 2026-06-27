@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  casablack_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  casablack_01.jpg
+  casablack_02.jpg
+  casablack_03.jpg ... (en el orden de aparición, hasta casablack_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

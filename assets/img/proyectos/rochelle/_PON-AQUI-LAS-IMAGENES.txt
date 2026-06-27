@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  rochelle_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  rochelle_01.jpg
+  rochelle_02.jpg
+  rochelle_03.jpg ... (en el orden de aparición, hasta rochelle_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

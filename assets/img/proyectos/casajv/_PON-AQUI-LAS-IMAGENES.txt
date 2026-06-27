@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  casajv_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  casajv_01.jpg
+  casajv_02.jpg
+  casajv_03.jpg ... (en el orden de aparición, hasta casajv_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

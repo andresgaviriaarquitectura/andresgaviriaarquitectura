@@ -1,0 +1,34 @@
+ORGANIZACIÓN DE IMÁGENES — Andrés Gaviria Arquitectura
+======================================================
+Hay una carpeta por proyecto (su nombre exacto NO se cambia).
+Dentro de cada carpeta van:
+  - 1 portada cuadrada:  <carpeta>_cover.jpg   (1500x1500)
+  - la secuencia:        <carpeta>_01.jpg, <carpeta>_02.jpg, ...  (orden de aparición)
+
+Reglas (obligatorias, el servidor distingue mayúsculas):
+  - todo en minúsculas, sin tildes, sin eñes, sin espacios
+  - extensión exactamente .jpg
+  - numeración a dos dígitos: 01, 02 ... 09, 10, 11, 12
+  - la página detecta hasta 12 imágenes por proyecto
+
+Carpeta  ->  Proyecto
+rochelle      La Rochelle
+curazao       Casa Curazao
+riveras       Riveras del Tambo
+casablack     Casa Black Diamond
+toscana       Casa Toscana
+heredia       Plan Parcial La Heredia
+casajv        Casa JV
+casagr        Casa GR
+montesol      Plan Parcial Montesol
+casapm        Casa PM
+casajs        Casa JS
+antigua       Plan Parcial Antigua
+casaja        Casa JA
+edificiovilla Edificio Villa
+casaaz        Casa AZ
+silence       Silence Suites
+casams        Casa MS
+casasp        Casa SP
+casabt        Casa BT
+cantarrana    Plaza Cantarrana

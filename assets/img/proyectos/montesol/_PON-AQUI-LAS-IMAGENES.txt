@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  montesol_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  montesol_01.jpg
+  montesol_02.jpg
+  montesol_03.jpg ... (en el orden de aparición, hasta montesol_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

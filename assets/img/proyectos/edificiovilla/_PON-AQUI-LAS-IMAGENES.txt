@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  edificiovilla_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  edificiovilla_01.jpg
+  edificiovilla_02.jpg
+  edificiovilla_03.jpg ... (en el orden de aparición, hasta edificiovilla_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

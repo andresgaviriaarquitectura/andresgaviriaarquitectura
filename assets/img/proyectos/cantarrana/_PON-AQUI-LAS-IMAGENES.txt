@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  cantarrana_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  cantarrana_01.jpg
+  cantarrana_02.jpg
+  cantarrana_03.jpg ... (en el orden de aparición, hasta cantarrana_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

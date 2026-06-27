@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  riveras_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  riveras_01.jpg
+  riveras_02.jpg
+  riveras_03.jpg ... (en el orden de aparición, hasta riveras_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

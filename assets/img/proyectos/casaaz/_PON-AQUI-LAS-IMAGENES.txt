@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  casaaz_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  casaaz_01.jpg
+  casaaz_02.jpg
+  casaaz_03.jpg ... (en el orden de aparición, hasta casaaz_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

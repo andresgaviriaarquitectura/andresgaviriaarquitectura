@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  heredia_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  heredia_01.jpg
+  heredia_02.jpg
+  heredia_03.jpg ... (en el orden de aparición, hasta heredia_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

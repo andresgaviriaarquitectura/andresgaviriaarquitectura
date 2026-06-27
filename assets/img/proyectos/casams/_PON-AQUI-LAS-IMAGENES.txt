@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  casams_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  casams_01.jpg
+  casams_02.jpg
+  casams_03.jpg ... (en el orden de aparición, hasta casams_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.

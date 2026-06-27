@@ -1,0 +1,7 @@
+Coloca aquí las imágenes de este proyecto, nombradas así:
+  silence_cover.jpg   (portada cuadrada 1:1, 1500x1500)
+  silence_01.jpg
+  silence_02.jpg
+  silence_03.jpg ... (en el orden de aparición, hasta silence_12.jpg)
+Todo en minúsculas, sin tildes ni espacios, extensión .jpg.
+Puedes borrar este archivo cuando pongas las imágenes.
