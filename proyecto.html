@@ -169,14 +169,16 @@
   }
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang);});});
   var seq=document.getElementById('sequence'),emptyNote=document.getElementById('emptyNote');
-  var found=0,attempted=0,total=13;
-  function addShot(src){var d=document.createElement('div');d.className='shot';var im=new Image();im.loading='lazy';im.alt=NAMES[slug].es;
-    im.onload=function(){im.classList.add('loaded');found++;d.appendChild(im);seq.appendChild(d);finish();};
-    im.onerror=function(){finish();};im.src=src;}
-  function finish(){attempted++;if(attempted>=total&&found===0){emptyNote.hidden=false;}}
   var base='assets/img/proyectos/'+slug+'/'+slug+'_';
-  addShot(base+'cover.jpg');
-  for(var i=1;i<=12;i++){addShot(base+(i<10?'0':'')+i+'.jpg');}
+  var MAXIMG=20,attempted=0,found=0;
+  function finish(){attempted++;if(attempted>=MAXIMG&&found===0){emptyNote.hidden=false;}}
+  for(var i=1;i<=MAXIMG;i++){(function(n){
+    var d=document.createElement('div');d.className='shot';d.style.display='none';seq.appendChild(d);
+    var im=new Image();im.loading='lazy';im.alt=NAMES[slug].es;
+    im.onload=function(){d.style.display='';im.classList.add('loaded');d.appendChild(im);found++;finish();};
+    im.onerror=function(){if(d.parentNode)d.parentNode.removeChild(d);finish();};
+    im.src=base+(n<10?'0':'')+n+'.jpg';
+  })(i);}
   var header=document.getElementById('header');
   window.addEventListener('scroll',function(){header.classList.toggle('is-scrolled',window.scrollY>40);},{passive:true});
   var startLang='es';try{startLang=sessionStorage.getItem('ag-lang')||'es';}catch(e){}
