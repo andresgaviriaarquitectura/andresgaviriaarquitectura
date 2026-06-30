@@ -67,11 +67,10 @@
   .projects__title{font-family:var(--font-display);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:0.01em;}
   .projects__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.5;max-width:32ch;color:var(--grafito);}
 
-  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,1.8vw,1.8rem);}
-  @media (max-width:1000px){.grid{grid-template-columns:repeat(3,1fr);}}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);}
   @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,3vw,1.4rem);}}
   .tile{display:block;position:relative;}
-  .tile__frame{position:relative;aspect-ratio:1/1;background:var(--carbon);overflow:hidden;}
+  .tile__frame{position:relative;aspect-ratio:1/1;background:var(--carbon);overflow:hidden;border-radius:14px;}
   .tile__placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--plata);font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.14em;opacity:0.4;}
   .tile__frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s,filter .5s;}
   .tile__frame img.loaded{opacity:1;}
@@ -147,10 +146,10 @@
     <div class="header-right">
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">Menú</button>
       <nav class="nav" id="nav" aria-label="Navegación principal">
-        <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
-        <a href="#estudio" data-i18n="nav.studio">Estudio</a>
-        <a href="#journal" data-i18n="nav.journal">Bitácora</a>
-        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+        <a href="index.html#proyectos" data-i18n="nav.projects">Proyectos</a>
+        <a href="estudio.html" data-i18n="nav.studio">Estudio</a>
+        <a href="bitacora.html" data-i18n="nav.journal">Bitácora</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       </nav>
       <div class="lang" role="group" aria-label="Idioma / Language">
         <button data-lang="es" aria-pressed="true">ES</button><span>/</span><button data-lang="en" aria-pressed="false">EN</button>
