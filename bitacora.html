@@ -127,6 +127,10 @@
   .back:hover{color:var(--carbon);}
   .page__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:0.01em;margin:0 0 clamp(1.6rem,4vw,2.6rem);}
   .page__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.35;color:var(--carbon);max-width:30ch;margin-bottom:clamp(1.8rem,4vw,2.8rem);}
+  .page__head{display:flex;justify-content:space-between;align-items:flex-end;gap:clamp(1.5rem,4vw,3rem);flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem);}
+  .page__head .page__title{margin:0;}
+  .page__intro{font-family:var(--font-display);font-weight:300;font-size:clamp(1.05rem,1.7vw,1.4rem);line-height:1.5;color:var(--grafito);max-width:42ch;}
+  @media(max-width:700px){.page__head{align-items:flex-start;}.page__intro{max-width:none;}}
   .prose p{max-width:62ch;color:var(--grafito);margin-bottom:1.1rem;line-height:1.75;}
   /* Estudio: retrato + biografía */
   .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start;margin-top:clamp(2.6rem,6vw,4rem);}
@@ -181,10 +185,13 @@
     </div>
   </header>
   <main class="page">
-    <a class="back" href="index.html#proyectos" data-i18n="back">← Proyectos</a>
-    <h1 class="page__title" data-i18n="bit.title">Bitácora</h1>
-    <p class="page__lead" data-i18n="bit.lead"></p>
-    <div class="prose"><p data-i18n="bit.intro"></p></div>
+    <div class="page__head">
+      <div>
+        <a class="back" href="index.html#proyectos" data-i18n="back">← Proyectos</a>
+        <h1 class="page__title" data-i18n="bit.title">Bitácora</h1>
+      </div>
+      <p class="page__intro" data-i18n="bit.intro"></p>
+    </div>
     <div class="articles">
       <article class="article">
         <a class="article__media" href="https://www.linkedin.com/pulse/medell%C3%ADn-eventos-globales-y-una-decisi%C3%B3n-pendiente-yff9e" target="_blank" rel="noopener">
