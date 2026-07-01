@@ -50,11 +50,11 @@
 
   main{padding-top:calc(var(--head-pad)*2 + 2.4rem);}
   .projects{padding:var(--section-y) var(--mx) calc(var(--section-y)*.6);}
-  .projects__head{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3.2rem);}
+  .projects__head{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;max-width:940px;margin:0 auto clamp(2rem,4vw,3.2rem);}
   .projects__title{font-family:var(--font-display);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:0.01em;}
   .projects__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.5;max-width:32ch;color:var(--grafito);}
 
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);max-width:940px;margin-left:auto;margin-right:auto;}
   @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,3vw,1.4rem);}}
   .tile{display:block;position:relative;}
   .tile__frame{position:relative;aspect-ratio:1/1;background:var(--carbon);overflow:hidden;border-radius:14px;}
@@ -87,7 +87,7 @@
   .studio{padding:var(--section-y) var(--mx);border-top:1px solid var(--hairline);}
   .studio__head{margin-bottom:clamp(1.8rem,3.5vw,2.8rem);}
   .studio__head .logo-svg{width:clamp(260px,34vw,400px);}
-  .studio__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start;}
+  .studio__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:center;}
   @media (max-width:760px){.studio__grid{grid-template-columns:1fr;}}
   .studio__statement{font-family:var(--font-display);font-weight:300;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.35;}
   .studio__body{color:var(--grafito);max-width:56ch;}
@@ -123,20 +123,29 @@
 </style>
 <style>
   .page{padding:clamp(7.5rem,14vw,10rem) var(--mx) var(--section-y);max-width:1080px;margin:0 auto;}
-  .page__eyebrow{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.2em;font-size:0.72rem;color:var(--plata);}
-  .page__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:0.01em;margin:.6rem 0 clamp(1.6rem,4vw,2.6rem);}
+  .back{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.2em;font-size:0.7rem;color:var(--grafito);display:inline-block;margin-bottom:clamp(1rem,2.4vw,1.6rem);transition:color .25s;}
+  .back:hover{color:var(--carbon);}
+  .page__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:0.01em;margin:0 0 clamp(1.6rem,4vw,2.6rem);}
   .page__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.35;color:var(--carbon);max-width:30ch;margin-bottom:clamp(1.8rem,4vw,2.8rem);}
   .prose p{max-width:62ch;color:var(--grafito);margin-bottom:1.1rem;line-height:1.75;}
-  .section-sep{margin-top:clamp(2.6rem,6vw,4rem);}
-  .bio__name{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.78rem;color:var(--carbon);margin-bottom:1rem;}
-  .placeholder-note{margin-top:1.4rem;font-size:.82rem;color:var(--plata);border-left:2px solid var(--hairline);padding-left:1rem;}
+  /* Estudio: retrato + biografía */
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start;margin-top:clamp(2.6rem,6vw,4rem);}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:clamp(1.6rem,5vw,2.4rem);}}
+  .portrait-frame{border-radius:16px;overflow:hidden;background:var(--hairline);}
+  .portrait-frame img{display:block;width:100%;height:auto;}
+  .bio__name{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.82rem;color:var(--carbon);margin-bottom:1rem;}
   /* Bitácora */
   .articles{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,2.4vw,2rem);margin-top:clamp(2rem,4vw,3rem);}
   @media(max-width:700px){.articles{grid-template-columns:1fr;}}
-  .article{display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem;padding:clamp(1.4rem,2.6vw,2.1rem);border:1px solid var(--hairline);border-radius:14px;background:var(--papel);transition:border-color .3s,transform .3s;}
+  .article{display:flex;flex-direction:column;border:1px solid var(--hairline);border-radius:14px;background:var(--papel);overflow:hidden;transition:border-color .3s,transform .3s;}
   .article:hover{border-color:var(--grafito);transform:translateY(-3px);}
+  .article__media{display:block;aspect-ratio:16/9;overflow:hidden;background:var(--hairline);}
+  .article__media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+  .article:hover .article__media img{transform:scale(1.03);}
+  .article__media.no-img{display:none;}
+  .article__body{display:flex;flex-direction:column;gap:1rem;padding:clamp(1.3rem,2.4vw,1.8rem);flex:1;}
   .article__tag{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;color:var(--plata);}
-  .article__title{font-family:var(--font-display);font-weight:400;font-size:clamp(1.08rem,1.6vw,1.34rem);line-height:1.32;color:var(--carbon);}
+  .article__title{font-family:var(--font-display);font-weight:400;font-size:clamp(1.08rem,1.6vw,1.34rem);line-height:1.32;color:var(--carbon);flex:1;}
   .article__link{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;color:var(--carbon);align-self:flex-start;border-bottom:1px solid var(--carbon);padding-bottom:2px;transition:opacity .25s;}
   .article__link:hover{opacity:.6;}
   /* Contacto */
@@ -172,7 +181,7 @@
     </div>
   </header>
   <main class="page">
-    <span class="page__eyebrow" data-i18n="est.eyebrow">Estudio</span>
+    <a class="back" href="index.html#proyectos" data-i18n="back">← Proyectos</a>
     <h1 class="page__title" data-i18n="est.title">Estudio</h1>
     <p class="page__lead" data-i18n="est.lead">El lujo sereno de habitar.</p>
     <div class="prose">
@@ -180,13 +189,16 @@
       <p data-i18n="est.p2"></p>
       <p data-i18n="est.p3"></p>
     </div>
-    <div class="section-sep">
-      <p class="bio__name" data-i18n="est.bioName">Andrés Gaviria</p>
-      <div class="prose">
-        <p data-i18n="est.bio1"></p>
-        <p data-i18n="est.bio2"></p>
+    <div class="about-grid">
+      <div class="portrait-frame"><img src="assets/img/estudio/andres-gaviria.jpg" alt="Andrés Gaviria" loading="lazy"></div>
+      <div>
+        <p class="bio__name" data-i18n="est.bioName">Andrés Gaviria</p>
+        <div class="prose">
+          <p data-i18n="est.bio1"></p>
+          <p data-i18n="est.bio2"></p>
+          <p data-i18n="est.bio3"></p>
+        </div>
       </div>
-      <p class="placeholder-note" data-i18n="est.note"></p>
     </div>
   </main>
 <footer class="site-footer" id="contacto">
@@ -215,15 +227,13 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3a3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2z"/></svg>
   </a>
 <script>
-  var I18N={es:{"nav.projects": "Proyectos", "nav.studio": "Estudio", "nav.journal": "Bitácora", "nav.contact": "Contacto", "footer.web": "Web", "footer.email": "Correo", "footer.phone": "Teléfono", "est.eyebrow": "Estudio", "est.title": "Estudio", "est.lead": "El lujo sereno de habitar.", "est.p1": "Andrés Gaviria Arquitectura es un estudio de autor con sede en Medellín, dedicado a la vivienda contemporánea en Colombia. Su trabajo se concentra en la casa unifamiliar y en la vivienda campestre del Oriente antioqueño —Llanogrande, El Retiro, La Ceja, Rionegro— y se extiende a planes parciales y proyectos urbanos. Cada encargo se entiende como una respuesta precisa a su lugar: la pendiente, la luz, los árboles, el clima.", "est.p2": "El estudio practica una arquitectura de líneas precisas, materiales honestos y luz natural, donde el silencio y la proporción importan tanto como el confort. La materialidad —ladrillo cara vista, piedra, madera, concreto a la vista— se emplea con sobriedad, buscando casas que envejezcan bien y que sostengan, en el tiempo, el lujo sereno de habitar.", "est.p3": "De la mano de constructoras y promotores aliados, el estudio acompaña cada proyecto según el encargo: desde el diseño arquitectónico y urbano hasta la dirección y la construcción de la obra.", "est.bioName": "Andrés Gaviria", "est.bio1": "Arquitecto y urbanista, Andrés Gaviria dirige el estudio que lleva su nombre. Es profesor universitario y candidato a doctor; su investigación explora la inteligencia artificial y los procesos de morfogénesis en la arquitectura contemporánea. Su práctica une el oficio del proyecto con una mirada crítica sobre las herramientas digitales y sobre el territorio antioqueño.", "est.bio2": "Desde Medellín, ha desarrollado un cuerpo de obra de vivienda de autor a lo largo de más de una década, con especial atención a la relación entre la casa, el paisaje y la forma de vivir de cada familia.", "est.note": "Borrador para tu revisión: completa o ajusta tu formación académica, el año de fundación del estudio y cualquier dato biográfico que quieras incluir."},en:{"nav.projects": "Works", "nav.studio": "Studio", "nav.journal": "Journal", "nav.contact": "Contact", "footer.web": "Web", "footer.email": "Email", "footer.phone": "Phone", "est.eyebrow": "Studio", "est.title": "Studio", "est.lead": "The serene luxury of dwelling.", "est.p1": "Andrés Gaviria Arquitectura is an authorial studio based in Medellín, devoted to contemporary dwelling in Colombia. Its work centres on the single-family house and the country home of eastern Antioquia —Llanogrande, El Retiro, La Ceja, Rionegro— and extends to master plans and urban projects. Each commission is understood as a precise response to its place: the slope, the light, the trees, the climate.", "est.p2": "The studio practises an architecture of precise lines, honest materials and natural light, where silence and proportion matter as much as comfort. Materiality —face brick, stone, timber, exposed concrete— is used with restraint, seeking houses that age well and sustain, over time, the serene luxury of dwelling.", "est.p3": "Working alongside allied builders and developers, the studio sees each project through according to the commission: from architectural and urban design to project direction and construction.", "est.bioName": "Andrés Gaviria", "est.bio1": "An architect and urban planner, Andrés Gaviria leads the studio that bears his name. He is a university professor and a doctoral candidate; his research explores artificial intelligence and morphogenetic processes in contemporary architecture. His practice joins the craft of the project with a critical view of digital tools and of the Antioquian territory.", "est.bio2": "From Medellín, he has built a body of authorial housing work over more than a decade, with particular attention to the relationship between the house, the landscape and each family’s way of living.", "est.note": "Draft for your review: complete or adjust your academic background, the studio’s founding year and any biographical details you wish to include."}};
+  var I18N={es:{"nav.projects": "Proyectos", "nav.studio": "Estudio", "nav.journal": "Bitácora", "nav.contact": "Contacto", "footer.web": "Web", "footer.email": "Correo", "footer.phone": "Teléfono", "back": "← Proyectos", "est.title": "Estudio", "est.lead": "El lujo sereno de habitar.", "est.p1": "Andrés Gaviria Arquitectura es un estudio de autor con sede en Medellín, dedicado a la vivienda contemporánea en Colombia. Su trabajo se concentra en la casa unifamiliar y en la vivienda campestre del Oriente antioqueño (Llanogrande, El Retiro, La Ceja, Rionegro, entre otros) y se extiende a planes parciales y proyectos urbanos. Cada encargo se entiende como una respuesta precisa a su lugar: la pendiente, la luz, los árboles, el clima.", "est.p2": "El estudio practica una arquitectura de líneas precisas, materiales honestos y luz natural, donde el silencio y la proporción importan tanto como el confort. La materialidad (ladrillo, piedra, madera y concreto a la vista) se emplea con sobriedad, buscando casas que envejezcan bien y que sostengan, en el tiempo, el lujo sereno de habitar.", "est.p3": "De la mano de constructoras y promotores aliados, el estudio acompaña cada proyecto según el encargo: desde el diseño arquitectónico y urbano hasta la dirección y la construcción de la obra.", "est.bioName": "Andrés Gaviria", "est.bio1": "Andrés Gaviria es arquitecto y urbanista, con más de quince años de ejercicio profesional dedicados a la vivienda de autor en Colombia. A lo largo de su trayectoria ha proyectado y dirigido casas unifamiliares, viviendas campestres, edificios y planes parciales, principalmente en el Oriente antioqueño y el Valle de Aburrá, consolidando un lenguaje propio de sobriedad, precisión y arraigo al lugar.", "est.bio2": "Es profesor universitario e investigador. Su trabajo académico, hoy en el marco de estudios doctorales, explora la inteligencia artificial y los procesos de morfogénesis en la arquitectura contemporánea, una mirada que enriquece su práctica proyectual y su manera de entender la relación entre la forma, la técnica y el territorio.", "est.bio3": "Dirige personalmente cada encargo, del primer trazo a la obra, con la convicción de que una casa bien hecha es aquella que sostiene, con el tiempo, el lujo sereno de habitar."},en:{"nav.projects": "Works", "nav.studio": "Studio", "nav.journal": "Journal", "nav.contact": "Contact", "footer.web": "Web", "footer.email": "Email", "footer.phone": "Phone", "back": "← Works", "est.title": "Studio", "est.lead": "The serene luxury of dwelling.", "est.p1": "Andrés Gaviria Arquitectura is an authorial studio based in Medellín, devoted to contemporary dwelling in Colombia. Its work centres on the single-family house and the country home of eastern Antioquia (Llanogrande, El Retiro, La Ceja, Rionegro, among others) and extends to master plans and urban projects. Each commission is understood as a precise response to its place: the slope, the light, the trees, the climate.", "est.p2": "The studio practises an architecture of precise lines, honest materials and natural light, where silence and proportion matter as much as comfort. Materiality (brick, stone, timber and exposed concrete) is used with restraint, seeking houses that age well and sustain, over time, the serene luxury of dwelling.", "est.p3": "Working alongside allied builders and developers, the studio sees each project through according to the commission: from architectural and urban design to project direction and construction.", "est.bioName": "Andrés Gaviria", "est.bio1": "Andrés Gaviria is an architect and urban planner with more than fifteen years of professional practice devoted to authorial housing in Colombia. Over his career he has designed and directed single-family houses, country homes, buildings and master plans, mainly in eastern Antioquia and the Aburrá Valley, shaping a personal language of restraint, precision and attachment to place.", "est.bio2": "He is a university professor and researcher. His academic work, currently within doctoral studies, explores artificial intelligence and morphogenetic processes in contemporary architecture, a perspective that enriches his design practice and his understanding of the relationship between form, technique and territory.", "est.bio3": "He personally leads each commission, from the first line to the finished work, convinced that a well-made house is one that sustains, over time, the serene luxury of dwelling."}};
   var PH={es:{},en:{}};
-  function setLang(lang){
-    document.documentElement.lang=lang;
+  function setLang(lang){document.documentElement.lang=lang;
     document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(I18N[lang][k]!=null)el.textContent=I18N[lang][k];});
     document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');if(PH[lang]&&PH[lang][k]!=null)el.setAttribute('placeholder',PH[lang][k]);});
     document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});
-    try{sessionStorage.setItem('ag-lang',lang);}catch(e){}
-  }
+    try{sessionStorage.setItem('ag-lang',lang);}catch(e){}}
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);});});
   var header=document.getElementById('header');
   window.addEventListener('scroll',function(){header.classList.toggle('is-scrolled',window.scrollY>40);},{passive:true});

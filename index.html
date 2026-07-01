@@ -63,11 +63,11 @@
 
   main{padding-top:calc(var(--head-pad)*2 + 2.4rem);}
   .projects{padding:var(--section-y) var(--mx) calc(var(--section-y)*.6);}
-  .projects__head{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3.2rem);}
+  .projects__head{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;max-width:940px;margin:0 auto clamp(2rem,4vw,3.2rem);}
   .projects__title{font-family:var(--font-display);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:0.01em;}
   .projects__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.5;max-width:32ch;color:var(--grafito);}
 
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);max-width:940px;margin-left:auto;margin-right:auto;}
   @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,3vw,1.4rem);}}
   .tile{display:block;position:relative;}
   .tile__frame{position:relative;aspect-ratio:1/1;background:var(--carbon);overflow:hidden;border-radius:14px;}
@@ -100,7 +100,7 @@
   .studio{padding:var(--section-y) var(--mx);border-top:1px solid var(--hairline);}
   .studio__head{margin-bottom:clamp(1.8rem,3.5vw,2.8rem);}
   .studio__head .logo-svg{width:clamp(260px,34vw,400px);}
-  .studio__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start;}
+  .studio__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:center;}
   @media (max-width:760px){.studio__grid{grid-template-columns:1fr;}}
   .studio__statement{font-family:var(--font-display);font-weight:300;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.35;}
   .studio__body{color:var(--grafito);max-width:56ch;}
@@ -174,12 +174,6 @@
           <p data-i18n="studio.p1">Andrés Gaviria Arquitectura es un estudio de autor dedicado a la vivienda contemporánea en Colombia. Una arquitectura de líneas precisas, materiales honestos y luz natural, donde el silencio y la proporción importan tanto como el lujo sereno de la forma de vivir de cada familia.</p>
         </div>
       </div>
-    </section>
-
-    <section class="journal" id="journal">
-      <span class="eyebrow" data-i18n="journal.eyebrow">Bitácora</span>
-      <h2 class="journal__title" data-i18n="journal.title">Escritos del estudio</h2>
-      <p class="journal__empty" data-i18n="journal.empty">Un espacio para el pensamiento de la práctica y la investigación. Próximamente.</p>
     </section>
   </main>
 

@@ -50,11 +50,11 @@
 
   main{padding-top:calc(var(--head-pad)*2 + 2.4rem);}
   .projects{padding:var(--section-y) var(--mx) calc(var(--section-y)*.6);}
-  .projects__head{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3.2rem);}
+  .projects__head{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;max-width:940px;margin:0 auto clamp(2rem,4vw,3.2rem);}
   .projects__title{font-family:var(--font-display);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:0.01em;}
   .projects__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.5;max-width:32ch;color:var(--grafito);}
 
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);max-width:940px;margin-left:auto;margin-right:auto;}
   @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,3vw,1.4rem);}}
   .tile{display:block;position:relative;}
   .tile__frame{position:relative;aspect-ratio:1/1;background:var(--carbon);overflow:hidden;border-radius:14px;}
@@ -87,7 +87,7 @@
   .studio{padding:var(--section-y) var(--mx);border-top:1px solid var(--hairline);}
   .studio__head{margin-bottom:clamp(1.8rem,3.5vw,2.8rem);}
   .studio__head .logo-svg{width:clamp(260px,34vw,400px);}
-  .studio__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start;}
+  .studio__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:center;}
   @media (max-width:760px){.studio__grid{grid-template-columns:1fr;}}
   .studio__statement{font-family:var(--font-display);font-weight:300;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.35;}
   .studio__body{color:var(--grafito);max-width:56ch;}
@@ -123,20 +123,29 @@
 </style>
 <style>
   .page{padding:clamp(7.5rem,14vw,10rem) var(--mx) var(--section-y);max-width:1080px;margin:0 auto;}
-  .page__eyebrow{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.2em;font-size:0.72rem;color:var(--plata);}
-  .page__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:0.01em;margin:.6rem 0 clamp(1.6rem,4vw,2.6rem);}
+  .back{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.2em;font-size:0.7rem;color:var(--grafito);display:inline-block;margin-bottom:clamp(1rem,2.4vw,1.6rem);transition:color .25s;}
+  .back:hover{color:var(--carbon);}
+  .page__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:0.01em;margin:0 0 clamp(1.6rem,4vw,2.6rem);}
   .page__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.35;color:var(--carbon);max-width:30ch;margin-bottom:clamp(1.8rem,4vw,2.8rem);}
   .prose p{max-width:62ch;color:var(--grafito);margin-bottom:1.1rem;line-height:1.75;}
-  .section-sep{margin-top:clamp(2.6rem,6vw,4rem);}
-  .bio__name{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.78rem;color:var(--carbon);margin-bottom:1rem;}
-  .placeholder-note{margin-top:1.4rem;font-size:.82rem;color:var(--plata);border-left:2px solid var(--hairline);padding-left:1rem;}
+  /* Estudio: retrato + biografía */
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start;margin-top:clamp(2.6rem,6vw,4rem);}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:clamp(1.6rem,5vw,2.4rem);}}
+  .portrait-frame{border-radius:16px;overflow:hidden;background:var(--hairline);}
+  .portrait-frame img{display:block;width:100%;height:auto;}
+  .bio__name{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.16em;font-size:0.82rem;color:var(--carbon);margin-bottom:1rem;}
   /* Bitácora */
   .articles{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,2.4vw,2rem);margin-top:clamp(2rem,4vw,3rem);}
   @media(max-width:700px){.articles{grid-template-columns:1fr;}}
-  .article{display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem;padding:clamp(1.4rem,2.6vw,2.1rem);border:1px solid var(--hairline);border-radius:14px;background:var(--papel);transition:border-color .3s,transform .3s;}
+  .article{display:flex;flex-direction:column;border:1px solid var(--hairline);border-radius:14px;background:var(--papel);overflow:hidden;transition:border-color .3s,transform .3s;}
   .article:hover{border-color:var(--grafito);transform:translateY(-3px);}
+  .article__media{display:block;aspect-ratio:16/9;overflow:hidden;background:var(--hairline);}
+  .article__media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+  .article:hover .article__media img{transform:scale(1.03);}
+  .article__media.no-img{display:none;}
+  .article__body{display:flex;flex-direction:column;gap:1rem;padding:clamp(1.3rem,2.4vw,1.8rem);flex:1;}
   .article__tag{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;color:var(--plata);}
-  .article__title{font-family:var(--font-display);font-weight:400;font-size:clamp(1.08rem,1.6vw,1.34rem);line-height:1.32;color:var(--carbon);}
+  .article__title{font-family:var(--font-display);font-weight:400;font-size:clamp(1.08rem,1.6vw,1.34rem);line-height:1.32;color:var(--carbon);flex:1;}
   .article__link{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;color:var(--carbon);align-self:flex-start;border-bottom:1px solid var(--carbon);padding-bottom:2px;transition:opacity .25s;}
   .article__link:hover{opacity:.6;}
   /* Contacto */
@@ -172,59 +181,80 @@
     </div>
   </header>
   <main class="page">
-    <span class="page__eyebrow" data-i18n="bit.eyebrow">Bitácora</span>
+    <a class="back" href="index.html#proyectos" data-i18n="back">← Proyectos</a>
     <h1 class="page__title" data-i18n="bit.title">Bitácora</h1>
     <p class="page__lead" data-i18n="bit.lead"></p>
     <div class="prose"><p data-i18n="bit.intro"></p></div>
     <div class="articles">
       <article class="article">
-        <div>
+        <a class="article__media" href="https://www.linkedin.com/pulse/medell%C3%ADn-eventos-globales-y-una-decisi%C3%B3n-pendiente-yff9e" target="_blank" rel="noopener">
+          <img src="assets/img/bitacora/art1.jpg" alt="" loading="lazy" onerror="var m=this.closest('.article__media');if(m)m.classList.add('no-img');">
+        </a>
+        <div class="article__body">
           <p class="article__tag">ES · LinkedIn</p>
           <h2 class="article__title">Medellín, eventos globales y una decisión pendiente</h2>
+          <a class="article__link" href="https://www.linkedin.com/pulse/medell%C3%ADn-eventos-globales-y-una-decisi%C3%B3n-pendiente-yff9e" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
         </div>
-        <a class="article__link" href="https://www.linkedin.com/pulse/medell%C3%ADn-eventos-globales-y-una-decisi%C3%B3n-pendiente-yff9e" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
       </article>
       <article class="article">
-        <div>
+        <a class="article__media" href="https://www.linkedin.com/pulse/most-attractive-towns-antioquia-foreign-investors-8vihe" target="_blank" rel="noopener">
+          <img src="assets/img/bitacora/art2.jpg" alt="" loading="lazy" onerror="var m=this.closest('.article__media');if(m)m.classList.add('no-img');">
+        </a>
+        <div class="article__body">
           <p class="article__tag">EN · LinkedIn</p>
           <h2 class="article__title">The most attractive towns in Antioquia for foreign investors and new beginnings</h2>
+          <a class="article__link" href="https://www.linkedin.com/pulse/most-attractive-towns-antioquia-foreign-investors-8vihe" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
         </div>
-        <a class="article__link" href="https://www.linkedin.com/pulse/most-attractive-towns-antioquia-foreign-investors-8vihe" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
       </article>
       <article class="article">
-        <div>
+        <a class="article__media" href="https://www.linkedin.com/pulse/dise%C3%B1ar-espacios-que-se-sienten-bien-cambia-nejxe" target="_blank" rel="noopener">
+          <img src="assets/img/bitacora/art3.jpg" alt="" loading="lazy" onerror="var m=this.closest('.article__media');if(m)m.classList.add('no-img');">
+        </a>
+        <div class="article__body">
           <p class="article__tag">ES · LinkedIn</p>
           <h2 class="article__title">Diseñar espacios que se sienten bien cambia la forma en que vivimos</h2>
+          <a class="article__link" href="https://www.linkedin.com/pulse/dise%C3%B1ar-espacios-que-se-sienten-bien-cambia-nejxe" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
         </div>
-        <a class="article__link" href="https://www.linkedin.com/pulse/dise%C3%B1ar-espacios-que-se-sienten-bien-cambia-nejxe" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
       </article>
       <article class="article">
-        <div>
+        <a class="article__media" href="https://www.linkedin.com/pulse/how-invest-safely-profitably-real-estate-colombia-tvjte" target="_blank" rel="noopener">
+          <img src="assets/img/bitacora/art4.jpg" alt="" loading="lazy" onerror="var m=this.closest('.article__media');if(m)m.classList.add('no-img');">
+        </a>
+        <div class="article__body">
           <p class="article__tag">EN · LinkedIn</p>
           <h2 class="article__title">How to invest safely and profitably in real estate in Colombia as a foreigner</h2>
+          <a class="article__link" href="https://www.linkedin.com/pulse/how-invest-safely-profitably-real-estate-colombia-tvjte" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
         </div>
-        <a class="article__link" href="https://www.linkedin.com/pulse/how-invest-safely-profitably-real-estate-colombia-tvjte" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
       </article>
       <article class="article">
-        <div>
+        <a class="article__media" href="https://www.linkedin.com/pulse/las-claves-para-que-un-proyecto-de-coliving-wzrme" target="_blank" rel="noopener">
+          <img src="assets/img/bitacora/art5.jpg" alt="" loading="lazy" onerror="var m=this.closest('.article__media');if(m)m.classList.add('no-img');">
+        </a>
+        <div class="article__body">
           <p class="article__tag">ES · LinkedIn</p>
           <h2 class="article__title">Las claves para que un proyecto de coliving sea exitoso y rentable</h2>
+          <a class="article__link" href="https://www.linkedin.com/pulse/las-claves-para-que-un-proyecto-de-coliving-wzrme" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
         </div>
-        <a class="article__link" href="https://www.linkedin.com/pulse/las-claves-para-que-un-proyecto-de-coliving-wzrme" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
       </article>
       <article class="article">
-        <div>
+        <a class="article__media" href="https://www.linkedin.com/pulse/antes-de-comprar-un-lote-para-construir-tu-casa-ena2e" target="_blank" rel="noopener">
+          <img src="assets/img/bitacora/art6.jpg" alt="" loading="lazy" onerror="var m=this.closest('.article__media');if(m)m.classList.add('no-img');">
+        </a>
+        <div class="article__body">
           <p class="article__tag">ES · LinkedIn</p>
           <h2 class="article__title">Antes de comprar un lote para construir tu casa, habla con tu arquitecto</h2>
+          <a class="article__link" href="https://www.linkedin.com/pulse/antes-de-comprar-un-lote-para-construir-tu-casa-ena2e" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
         </div>
-        <a class="article__link" href="https://www.linkedin.com/pulse/antes-de-comprar-un-lote-para-construir-tu-casa-ena2e" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
       </article>
       <article class="article">
-        <div>
+        <a class="article__media" href="https://www.linkedin.com/pulse/los-detalles-que-hacen-%C3%BAnica-una-casa-c%C3%B3mo-convertir-mnace" target="_blank" rel="noopener">
+          <img src="assets/img/bitacora/art7.jpg" alt="" loading="lazy" onerror="var m=this.closest('.article__media');if(m)m.classList.add('no-img');">
+        </a>
+        <div class="article__body">
           <p class="article__tag">ES · LinkedIn</p>
           <h2 class="article__title">Los detalles que hacen única a una casa: cómo convertir un espacio en una obra de arte personalizada</h2>
+          <a class="article__link" href="https://www.linkedin.com/pulse/los-detalles-que-hacen-%C3%BAnica-una-casa-c%C3%B3mo-convertir-mnace" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
         </div>
-        <a class="article__link" href="https://www.linkedin.com/pulse/los-detalles-que-hacen-%C3%BAnica-una-casa-c%C3%B3mo-convertir-mnace" target="_blank" rel="noopener" data-i18n="bit.read">Leer en LinkedIn →</a>
       </article>
     </div>
   </main>
@@ -254,15 +284,13 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3a3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2z"/></svg>
   </a>
 <script>
-  var I18N={es:{"nav.projects": "Proyectos", "nav.studio": "Estudio", "nav.journal": "Bitácora", "nav.contact": "Contacto", "footer.web": "Web", "footer.email": "Correo", "footer.phone": "Teléfono", "bit.eyebrow": "Bitácora", "bit.title": "Bitácora", "bit.lead": "Pensar la arquitectura, el territorio y la manera de habitar.", "bit.intro": "Bitácora reúne artículos y reflexiones de Andrés Gaviria sobre la arquitectura, el territorio antioqueño, la inversión inmobiliaria y la forma en que habitamos. Publicados originalmente en LinkedIn, se recopilan aquí como una conversación abierta sobre el oficio y el lugar.", "bit.read": "Leer en LinkedIn →"},en:{"nav.projects": "Works", "nav.studio": "Studio", "nav.journal": "Journal", "nav.contact": "Contact", "footer.web": "Web", "footer.email": "Email", "footer.phone": "Phone", "bit.eyebrow": "Journal", "bit.title": "Journal", "bit.lead": "Thinking architecture, territory and the way we dwell.", "bit.intro": "Journal gathers articles and reflections by Andrés Gaviria on architecture, the Antioquian territory, real-estate investment and the way we dwell. Originally published on LinkedIn, they are collected here as an open conversation about craft and place.", "bit.read": "Read on LinkedIn →"}};
+  var I18N={es:{"nav.projects": "Proyectos", "nav.studio": "Estudio", "nav.journal": "Bitácora", "nav.contact": "Contacto", "footer.web": "Web", "footer.email": "Correo", "footer.phone": "Teléfono", "back": "← Proyectos", "bit.title": "Bitácora", "bit.lead": "Pensar la arquitectura, el territorio y la manera de habitar.", "bit.intro": "Bitácora reúne artículos y reflexiones de Andrés Gaviria sobre la arquitectura, el territorio antioqueño, la inversión inmobiliaria y la forma en que habitamos. Publicados originalmente en LinkedIn, se recopilan aquí como una conversación abierta sobre el oficio y el lugar.", "bit.read": "Leer en LinkedIn →"},en:{"nav.projects": "Works", "nav.studio": "Studio", "nav.journal": "Journal", "nav.contact": "Contact", "footer.web": "Web", "footer.email": "Email", "footer.phone": "Phone", "back": "← Works", "bit.title": "Journal", "bit.lead": "Thinking architecture, territory and the way we dwell.", "bit.intro": "Journal gathers articles and reflections by Andrés Gaviria on architecture, the Antioquian territory, real-estate investment and the way we dwell. Originally published on LinkedIn, they are collected here as an open conversation about craft and place.", "bit.read": "Read on LinkedIn →"}};
   var PH={es:{},en:{}};
-  function setLang(lang){
-    document.documentElement.lang=lang;
+  function setLang(lang){document.documentElement.lang=lang;
     document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(I18N[lang][k]!=null)el.textContent=I18N[lang][k];});
     document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');if(PH[lang]&&PH[lang][k]!=null)el.setAttribute('placeholder',PH[lang][k]);});
     document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});
-    try{sessionStorage.setItem('ag-lang',lang);}catch(e){}
-  }
+    try{sessionStorage.setItem('ag-lang',lang);}catch(e){}}
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);});});
   var header=document.getElementById('header');
   window.addEventListener('scroll',function(){header.classList.toggle('is-scrolled',window.scrollY>40);},{passive:true});
