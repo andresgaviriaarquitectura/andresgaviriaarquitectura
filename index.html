@@ -65,7 +65,7 @@
   .projects{padding:var(--section-y) var(--mx) calc(var(--section-y)*.6);}
   .projects__head{max-width:1220px;margin:0 auto clamp(2rem,4vw,3.2rem);}
   .projects__title{font-family:var(--font-display);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:0.01em;}
-  .projects__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.5;max-width:63ch;color:var(--grafito);margin-top:clamp(1rem,2vw,1.4rem);}
+  .projects__lead{font-family:var(--font-display);font-weight:300;font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.5;max-width:none;color:var(--grafito);margin-top:clamp(1rem,2vw,1.4rem);}
 
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.4vw,2.4rem);max-width:1220px;margin-left:auto;margin-right:auto;}
   @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,3vw,1.4rem);}}
@@ -161,7 +161,7 @@
     <section class="projects" id="proyectos">
       <div class="projects__head">
         <h1 class="projects__title" data-i18n="projects.title">Proyectos</h1>
-        <p class="projects__lead" data-i18n="projects.lead">Cada casa nace de su lugar, de la pendiente, la luz, los árboles y el paisaje. Una casa es la forma de los días y de la vida de quienes la habitan. Diseñada con líneas sobrias, pensada para durar.</p>
+        <p class="projects__lead" data-i18n="projects.lead">Cada casa nace de su lugar, de la pendiente, la luz, los árboles y el paisaje. Una casa es la forma de los días y de la vida de quienes la habitan. Buscamos la correspondencia precisa entre la arquitectura, el paisaje y la manera de habitar que propone cada lugar.</p>
       </div>
       <div class="grid" id="grid"></div>
     </section>
@@ -238,13 +238,13 @@
 
   var I18N={
     es:{'nav.projects':'Proyectos','nav.studio':'Estudio','nav.journal':'Bitácora','nav.contact':'Contacto',
-      'projects.title':'Proyectos','projects.lead':'Cada casa nace de su lugar, de la pendiente, la luz, los árboles y el paisaje. Una casa es la forma de los días y de la vida de quienes la habitan. Diseñada con líneas sobrias, pensada para durar.',
+      'projects.title':'Proyectos','projects.lead':'Cada casa nace de su lugar, de la pendiente, la luz, los árboles y el paisaje. Una casa es la forma de los días y de la vida de quienes la habitan. Buscamos la correspondencia precisa entre la arquitectura, el paisaje y la manera de habitar que propone cada lugar.',
       'studio.eyebrow':'Estudio','studio.statement':'El lujo sereno de habitar.',
       'studio.p1':'Andrés Gaviria Arquitectura es un estudio de autor dedicado a la vivienda contemporánea en Colombia. Una arquitectura de líneas precisas, materiales honestos y luz natural, donde el silencio y la proporción importan tanto como el lujo sereno de la forma de vivir de cada familia.',
       'journal.eyebrow':'Bitácora','journal.title':'Escritos del estudio','journal.empty':'Un espacio para el pensamiento de la práctica y la investigación. Próximamente.',
       'footer.web':'Web','footer.email':'Correo','footer.phone':'Teléfono'},
     en:{'nav.projects':'Works','nav.studio':'Studio','nav.journal':'Journal','nav.contact':'Contact',
-      'projects.title':'Works','projects.lead':'Each house is born of its place \u2014 of the slope, the light, the trees and the landscape. A house is the shape of the days and the lives of those who dwell in it. Designed with restrained lines, made to last.',
+      'projects.title':'Works','projects.lead':'Each house is born of its place \u2014 of the slope, the light, the trees and the landscape. A house is the shape of the days and the lives of those who dwell in it. We seek the precise correspondence between architecture, landscape and the way of dwelling that each place proposes.',
       'studio.eyebrow':'Studio','studio.statement':'The serene luxury of dwelling.',
       'studio.p1':'Andr\u00e9s Gaviria Arquitectura is an authorial studio devoted to contemporary dwelling in Colombia. An architecture of precise lines, honest materials and natural light, where silence and proportion matter as much as the serene luxury of each family\u2019s way of living.',
       'journal.eyebrow':'Journal','journal.title':'Writings from the studio','journal.empty':'A space for the thinking of practice and research. Coming soon.',
